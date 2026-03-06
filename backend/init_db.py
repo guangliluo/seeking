@@ -12,11 +12,7 @@ import os
 DB_PATH = os.path.join(os.path.dirname(__file__), 'seeking.db')
 
 def init_database():
-    """初始化数据库表结构"""
-    # 如果数据库文件已存在，先删除（仅用于初始化）
-    if os.path.exists(DB_PATH):
-        os.remove(DB_PATH)
-
+    """初始化数据库表结构（幂等操作）"""
     # 连接数据库（如果不存在会自动创建）
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
@@ -55,14 +51,14 @@ def init_database():
         ('admin', 'seeking123')
     )
 
-    # 插入一些测试预约数据（仅用于演示）
-    cursor.execute('''
-    INSERT INTO bookings (name, phone, booking_date, location, software, problem_description, status)
-    VALUES
-        ('张三', '13812345678', '2026-03-10', '图书馆3楼电子阅览室', 'MATLAB', '需要安装MATLAB R2024a', 'pending'),
-        ('李四', '13987654321', '2026-03-11', '计算机与信息学院楼201室', 'Python', 'Python环境配置问题', 'approved'),
-        ('王五', '13711223344', '2026-03-12', '创新创业中心105室', 'Office 365', 'Office激活问题', 'rejected')
-    ''')
+    # 插入一些测试预约数据（仅用于演示，生产环境可以注释掉）
+    # cursor.execute('''
+    # INSERT INTO bookings (name, phone, booking_date, location, software, problem_description, status)
+    # VALUES
+    #     ('张三', '13812345678', '2026-03-10', '图书馆3楼电子阅览室', 'MATLAB', '需要安装MATLAB R2024a', 'pending'),
+    #     ('李四', '13987654321', '2026-03-11', '计算机与信息学院楼201室', 'Python', 'Python环境配置问题', 'approved'),
+    #     ('王五', '13711223344', '2026-03-12', '创新创业中心105室', 'Office 365', 'Office激活问题', 'rejected')
+    # ''')
 
     # 提交事务并关闭连接
     conn.commit()
@@ -71,6 +67,7 @@ def init_database():
     print("Seeking 数据库初始化完成！")
     print(f"数据库文件: {DB_PATH}")
     print("默认管理员账号: admin / seeking123")
+    print("注意：生产环境请务必修改默认密码！")
 
 if __name__ == '__main__':
     init_database()
