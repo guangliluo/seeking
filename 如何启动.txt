@@ -1,0 +1,70 @@
+Seeking 网站启动指南（最简单版本）
+
+========== 方法一：一键启动（推荐） ==========
+
+Windows用户：
+1. 双击运行 start_windows.bat
+2. 等待安装完成，网站自动启动
+
+Linux/Mac用户：
+1. 打开终端，进入项目目录
+2. 运行：chmod +x start_linux_mac.sh
+3. 运行：./start_linux_mac.sh
+
+========== 方法二：手动三步启动 ==========
+
+1. 安装依赖
+   cd backend
+   pip install -r requirements.txt
+
+2. 初始化数据库
+   python init_db.py
+   （默认管理员账号：admin / seeking123）
+
+3. 启动网站
+   python app.py
+
+========== 访问网站 ==========
+
+网站启动后，在浏览器访问：
+
+前台网站：      http://localhost:5000
+预约表单：      http://localhost:5000/booking
+结果查询：      http://localhost:5000/query
+常见问题：      http://localhost:5000/faq
+管理员登录：    http://localhost:5000/admin
+管理员后台：    http://localhost:5000/admin/dashboard
+
+管理员账号：admin / seeking123
+
+========== 测试数据 ==========
+
+已预置3条测试数据，可用手机号后4位查询：
+
+张三：13812345678（待审核）→ 查询：5678
+李四：13987654321（已通过）→ 查询：4321
+王五：13711223344（已拒绝）→ 查询：3344
+
+========== 快速体验 ==========
+
+1. 提交预约：访问 /booking 填写表单提交
+2. 查询结果：访问 /query 输入 5678
+3. 管理员登录：访问 /admin 使用 admin/seeking123
+4. 审核预约：在后台找到待审核记录点击"审核"
+
+========== 停止服务 ==========
+
+在运行 python app.py 的终端窗口按 Ctrl+C
+
+========== 更多信息 ==========
+
+详细文档：
+- 完整部署指南：deployment.md
+- 功能测试用例：test_cases.md
+- 项目介绍：README.md
+
+遇到问题：
+1. 端口占用：修改 app.py 最后一行 port=5001
+2. 依赖安装失败：使用国内镜像源
+   pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+3. 重新开始：删除 backend/seeking.db 重新运行 init_db.py

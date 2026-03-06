@@ -1,0 +1,1405 @@
+/*
+ * Seeking 网站样式文件
+ * 三峡大学技术支持&科研竞赛答疑预约平台
+ */
+
+/* ==================== 基础样式 ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #006633;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #004d26;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ==================== 工具类 ==================== */
+.seeking-text {
+    font-weight: bold;
+    color: #006633;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+    background-color: #006633;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #005523;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    color: white;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.btn-info:hover {
+    background-color: #138496;
+    color: white;
+}
+
+.btn-lg {
+    padding: 12px 24px;
+    font-size: 18px;
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+/* ==================== 导航栏 ==================== */
+.navbar {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar-brand i {
+    font-size: 24px;
+    color: #006633;
+}
+
+.brand-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #006633;
+}
+
+.brand-subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 1px solid #ddd;
+}
+
+.navbar-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-menu a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    color: #555;
+}
+
+.navbar-menu a:hover {
+    background-color: #f0f0f0;
+    color: #006633;
+}
+
+.navbar-menu a.active {
+    background-color: #e6f5e6;
+    color: #006633;
+    font-weight: 500;
+}
+
+/* ==================== 首页样式 ==================== */
+.hero {
+    background: linear-gradient(135deg, #006633 0%, #004d26 100%);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero h1 .seeking-text {
+    color: white;
+    font-weight: 800;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.features {
+    padding: 60px 0;
+}
+
+.features h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 48px;
+    color: #006633;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.booking-rules {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.booking-rules h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+}
+
+.rules-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.rule-item {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.rule-item h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    color: #006633;
+}
+
+.quick-actions {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.quick-actions h2 {
+    margin-bottom: 40px;
+    font-size: 32px;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 30px;
+    min-width: 200px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.action-btn i {
+    font-size: 48px;
+}
+
+/* ==================== 页面头部 ==================== */
+.page-header {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.page-subtitle {
+    font-size: 18px;
+    color: #666;
+}
+
+/* ==================== 预约表单 ==================== */
+.booking-form-container {
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.booking-form {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #444;
+}
+
+.form-group label i {
+    color: #006633;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #006633;
+    box-shadow: 0 0 0 3px rgba(0,102,51,0.1);
+}
+
+.form-hint {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.software-input-group {
+    position: relative;
+}
+
+.software-input-group datalist {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.form-notice {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f0f7f0;
+    border-radius: 8px;
+    border-left: 4px solid #006633;
+}
+
+.form-notice h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    color: #006633;
+}
+
+.form-notice ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+.form-notice li {
+    margin-bottom: 8px;
+}
+
+/* ==================== 成功消息 ==================== */
+.success-message {
+    text-align: center;
+    padding: 50px 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.success-icon {
+    font-size: 64px;
+    color: #28a745;
+    margin-bottom: 20px;
+}
+
+.success-message h2 {
+    margin-bottom: 15px;
+    color: #28a745;
+}
+
+.success-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* ==================== 查询页面 ==================== */
+.query-container {
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.query-input-section {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    margin-bottom: 40px;
+}
+
+.query-input-group {
+    margin-bottom: 20px;
+}
+
+.query-input-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #444;
+}
+
+.query-input-group input {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 4px;
+}
+
+.query-results {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.results-count {
+    font-size: 18px;
+    color: #666;
+}
+
+.results-count span {
+    font-weight: bold;
+    color: #006633;
+}
+
+.results-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.booking-card {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid #ddd;
+    transition: all 0.3s;
+}
+
+.booking-card:hover {
+    background: #f0f7ff;
+    transform: translateX(5px);
+}
+
+.booking-card.approved {
+    border-left-color: #28a745;
+}
+
+.booking-card.rejected {
+    border-left-color: #dc3545;
+}
+
+.booking-card.pending {
+    border-left-color: #ffc107;
+}
+
+.booking-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.booking-card-title {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.booking-status {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: 5px;
+}
+
+.status-pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status-approved {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-rejected {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.booking-card-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.detail-item {
+    display: flex;
+    gap: 10px;
+}
+
+.detail-label {
+    font-weight: 500;
+    color: #666;
+    min-width: 80px;
+}
+
+.booking-card-footer {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.review-notes {
+    font-style: italic;
+    color: #666;
+}
+
+.no-results-message {
+    text-align: center;
+    padding: 50px 30px;
+}
+
+.no-results-icon {
+    font-size: 64px;
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+.no-results-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.query-instructions {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f0f7ff;
+    border-radius: 8px;
+    border-left: 4px solid #0066cc;
+}
+
+.query-instructions h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    color: #0066cc;
+}
+
+/* ==================== 常见问题页面 ==================== */
+.faq-container {
+    max-width: 1000px;
+    margin: 0 auto 60px;
+}
+
+.faq-section {
+    margin-bottom: 40px;
+}
+
+.faq-section h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #0066cc;
+    color: #0066cc;
+}
+
+.faq-item {
+    background: white;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.faq-question {
+    padding: 20px;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+    background-color: #e9ecef;
+}
+
+.faq-question::after {
+    content: '+';
+    font-size: 24px;
+    color: #0066cc;
+}
+
+.faq-question.active::after {
+    content: '-';
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s, padding 0.3s;
+}
+
+.faq-answer.active {
+    padding: 20px;
+    max-height: 1000px;
+}
+
+.faq-answer ul,
+.faq-answer ol {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.faq-answer li {
+    margin-bottom: 8px;
+}
+
+.more-help {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(135deg, #0066cc 0%, #004d99 100%);
+    color: white;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+.more-help h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.help-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* ==================== 管理员登录页面 ==================== */
+.admin-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.admin-login-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.admin-login-card {
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.admin-login-header {
+    padding: 40px 30px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #0066cc 0%, #004d99 100%);
+    color: white;
+}
+
+.admin-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.admin-brand-name {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.admin-login-header h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.admin-subtitle {
+    opacity: 0.9;
+    font-size: 14px;
+}
+
+.admin-login-form {
+    padding: 30px;
+}
+
+.admin-form-group {
+    margin-bottom: 20px;
+}
+
+.admin-form-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #444;
+}
+
+.admin-form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.admin-form-actions {
+    margin-top: 30px;
+}
+
+.admin-login-hint {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+
+.admin-credentials {
+    margin-top: 10px;
+    font-family: monospace;
+    background: #f8f9fa;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+}
+
+.admin-login-success {
+    padding: 50px 30px;
+    text-align: center;
+}
+
+.loading-spinner {
+    margin-top: 20px;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #0066cc;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.admin-back-link {
+    margin-top: 30px;
+}
+
+.admin-footer {
+    margin-top: 40px;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}
+
+/* ==================== 管理员后台 ==================== */
+.admin-dashboard-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.admin-header {
+    background: linear-gradient(135deg, #0066cc 0%, #004d99 100%);
+    color: white;
+    padding: 15px 0;
+}
+
+.admin-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-header-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+}
+
+.admin-brand-subtitle {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 1px solid rgba(255,255,255,0.3);
+}
+
+.admin-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.admin-user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.admin-dashboard-container {
+    flex: 1;
+    padding: 40px 20px;
+}
+
+.admin-page-header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.admin-stats-container {
+    margin-bottom: 40px;
+}
+
+.admin-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.admin-stat-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.stat-icon {
+    font-size: 36px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.stat-total .stat-icon {
+    background-color: #e6f2ff;
+    color: #0066cc;
+}
+
+.stat-pending .stat-icon {
+    background-color: #fff3cd;
+    color: #ffc107;
+}
+
+.stat-approved .stat-icon {
+    background-color: #d4edda;
+    color: #28a745;
+}
+
+.stat-rejected .stat-icon {
+    background-color: #f8d7da;
+    color: #dc3545;
+}
+
+.stat-content h3 {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.admin-filter-toolbar {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+.admin-filter-toolbar h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-end;
+}
+
+.filter-group {
+    flex: 1;
+    min-width: 150px;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #444;
+}
+
+.filter-group input,
+.filter-group select {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.filter-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.admin-bookings-container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+}
+
+.admin-bookings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.admin-bookings-header h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #444;
+}
+
+.bookings-count {
+    color: #666;
+}
+
+.bookings-count span {
+    font-weight: bold;
+    color: #0066cc;
+}
+
+.admin-bookings-table-container {
+    overflow-x: auto;
+}
+
+.admin-bookings-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-bookings-table th,
+.admin-bookings-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.admin-bookings-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #444;
+    position: sticky;
+    top: 0;
+}
+
+.admin-bookings-table tbody tr:hover {
+    background-color: #f0f7ff;
+}
+
+.admin-no-data,
+.admin-loading {
+    text-align: center;
+    padding: 60px 30px;
+}
+
+.no-data-icon {
+    font-size: 64px;
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+/* ==================== 模态框 ==================== */
+.admin-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 15px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 30px;
+    border-bottom: 1px solid #eee;
+    background: linear-gradient(135deg, #0066cc 0%, #004d99 100%);
+    color: white;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.review-booking-info {
+    margin-bottom: 30px;
+}
+
+.review-booking-info h3 {
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-item label {
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.info-item.full-width {
+    grid-column: 1 / -1;
+}
+
+.review-form .form-group {
+    margin-bottom: 25px;
+}
+
+.radio-group {
+    display: flex;
+    gap: 30px;
+    margin-top: 10px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.radio-custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    position: relative;
+}
+
+.radio-label input:checked + .radio-custom {
+    border-color: #0066cc;
+}
+
+.radio-label input:checked + .radio-custom::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background: #0066cc;
+    border-radius: 50%;
+}
+
+.radio-text.status-approved {
+    color: #28a745;
+    font-weight: 500;
+}
+
+.radio-text.status-rejected {
+    color: #dc3545;
+    font-weight: 500;
+}
+
+.required-note {
+    color: #dc3545;
+    font-size: 14px;
+}
+
+/* ==================== Toast提示 ==================== */
+.admin-toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 400px;
+    z-index: 3000;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.admin-toast.success {
+    border-left: 4px solid #28a745;
+}
+
+.toast-icon {
+    font-size: 24px;
+    color: #28a745;
+}
+
+.toast-content h4 {
+    margin-bottom: 5px;
+    color: #155724;
+}
+
+.admin-dashboard-footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+/* ==================== 响应式设计 ==================== */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .features-grid,
+    .rules-list {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-form,
+    .query-input-section,
+    .query-results {
+        padding: 25px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .action-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .admin-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .filter-row {
+        flex-direction: column;
+    }
+
+    .filter-group {
+        width: 100%;
+    }
+
+    .admin-bookings-table {
+        font-size: 14px;
+    }
+
+    .admin-bookings-table th,
+    .admin-bookings-table td {
+        padding: 10px;
+    }
+
+    .modal-content {
+        margin: 10px;
+    }
+
+    .radio-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .hero {
+        padding: 50px 0;
+    }
+
+    .page-header h1 {
+        font-size: 28px;
+    }
+}

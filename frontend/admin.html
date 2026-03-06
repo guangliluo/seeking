@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seeking - 管理员后台登录</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="admin-page">
+    <!-- 管理员登录页面 -->
+    <div class="admin-login-container">
+        <div class="admin-login-card">
+            <!-- 登录表单 -->
+            <form id="adminLoginForm" class="admin-login-form">
+                <div class="admin-login-header">
+                    <div class="admin-logo">
+                        <i class="fas fa-search"></i>
+                        <span class="admin-brand-name">Seeking</span>
+                    </div>
+                    <h1>Seeking - 管理员后台登录</h1>
+                    <p class="admin-subtitle">三峡大学技术支持&科研竞赛答疑预约平台管理后台</p>
+                </div>
+
+                <div class="admin-form-group">
+                    <label for="adminUsername">
+                        <i class="fas fa-user"></i> 管理员账号
+                    </label>
+                    <input type="text" id="adminUsername" name="username" placeholder="请输入管理员账号" required>
+                </div>
+
+                <div class="admin-form-group">
+                    <label for="adminPassword">
+                        <i class="fas fa-lock"></i> 管理员密码
+                    </label>
+                    <input type="password" id="adminPassword" name="password" placeholder="请输入管理员密码" required>
+                </div>
+
+                <div class="admin-form-actions">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">
+                        <i class="fas fa-sign-in-alt"></i> 登录后台
+                    </button>
+                </div>
+
+                <div class="admin-login-hint">
+                    <p><i class="fas fa-info-circle"></i> 仅限校内授权管理员登录使用</p>
+                    <p class="admin-credentials">
+                        <small>默认账号: admin | 默认密码: seeking123</small>
+                    </p>
+                </div>
+            </form>
+
+            <!-- 登录成功提示（初始隐藏） -->
+            <div id="adminLoginSuccess" class="admin-login-success" style="display: none;">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Seeking：登录成功</h2>
+                <p>正在跳转到管理员后台...</p>
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 返回首页链接 -->
+        <div class="admin-back-link">
+            <a href="/" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> 返回首页
+            </a>
+        </div>
+
+        <!-- 页脚 -->
+        <footer class="admin-footer">
+            <p>&copy; 2026 <span class="seeking-text">Seeking</span> - 三峡大学软件下载&答疑预约平台</p>
+            <p class="footer-note">管理员后台，未经授权禁止访问</p>
+        </footer>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

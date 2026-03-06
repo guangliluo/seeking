@@ -1,0 +1,37 @@
+# Render部署配置
+# 文档: https://render.com/docs/deploy-flask
+
+services:
+  - type: web
+    name: seeking-app
+    env: python
+    region: singapore  # 可选: oregon, frankfurt, singapore
+    plan: free
+
+    # 构建命令
+    buildCommand: |
+      pip install -r backend/requirements.txt
+
+    # 启动命令
+    startCommand: |
+      cd backend && gunicorn app:app --bind 0.0.0.0:$PORT
+
+    # 环境变量
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: FLASK_ENV
+        value: production
+
+    # 健康检查
+    healthCheckPath: /
+    initialDelaySeconds: 30
+
+    # 自动部署
+    autoDeploy: true
+
+# 数据库（如果需要）
+# databases:
+#   - name: seeking-db
+#     databaseName: seeking
+#     plan: free

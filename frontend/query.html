@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seeking - 结果查询</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <i class="fas fa-search"></i>
+                <span class="brand-name">Seeking</span>
+                <span class="brand-subtitle">三峡大学技术支持&科研竞赛答疑预约平台</span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="/"><i class="fas fa-home"></i> 首页</a></li>
+                <li><a href="/booking"><i class="fas fa-calendar-plus"></i> 预约表单</a></li>
+                <li><a href="/query" class="active"><i class="fas fa-search"></i> 结果查询</a></li>
+                <li><a href="/faq"><i class="fas fa-question-circle"></i> 常见问题</a></li>
+                <li><a href="/admin"><i class="fas fa-user-cog"></i> 管理员</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="container">
+        <div class="page-header">
+            <h1><span class="seeking-text">Seeking</span> - 结果查询</h1>
+            <p class="page-subtitle">输入手机号后4位查询预约审核结果</p>
+        </div>
+
+        <div class="query-container">
+            <!-- 查询输入框 -->
+            <div class="query-input-section">
+                <div class="query-input-group">
+                    <label for="phoneLast4">
+                        <i class="fas fa-mobile-alt"></i> 手机号后4位 *
+                    </label>
+                    <input type="text" id="phoneLast4" name="phoneLast4" placeholder="请输入手机号后4位" maxlength="4" required>
+                    <div class="form-hint">请输入您预约时填写的手机号后4位数字</div>
+                </div>
+                <button id="queryBtn" class="btn btn-primary btn-lg">
+                    <i class="fas fa-search"></i> 查询结果
+                </button>
+            </div>
+
+            <!-- 查询结果 -->
+            <div id="queryResults" class="query-results" style="display: none;">
+                <div class="results-header">
+                    <h2 id="resultsTitle">查询结果</h2>
+                    <div class="results-count">找到 <span id="resultsCount">0</span> 条记录</div>
+                </div>
+
+                <div id="resultsList" class="results-list">
+                    <!-- 预约记录卡片将通过JavaScript动态生成 -->
+                </div>
+
+                <div id="noResultsMessage" class="no-results-message" style="display: none;">
+                    <div class="no-results-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Seeking：未查询到相关预约记录</h3>
+                    <p>请核对手机号后4位是否正确，或您尚未提交预约。</p>
+                    <div class="no-results-actions">
+                        <a href="/booking" class="btn btn-primary"><i class="fas fa-calendar-plus"></i> 立即预约</a>
+                        <button id="tryAgainBtn" class="btn btn-secondary"><i class="fas fa-redo"></i> 重新查询</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 查询说明 -->
+            <div class="query-instructions">
+                <h3><i class="fas fa-info-circle"></i> 查询说明</h3>
+                <ul>
+                    <li>仅需输入手机号后4位即可查询，无需注册登录</li>
+                    <li>可查询所有使用该手机号提交的预约记录</li>
+                    <li>审核状态分为：<span class="status-badge status-pending">待审核</span>、<span class="status-badge status-approved">已通过</span>、<span class="status-badge status-rejected">已拒绝</span></li>
+                    <li>审核通过后，请按预约时间和地点前往，并携带校园卡</li>
+                    <li>如有疑问，请查看<a href="/faq">常见问题</a>或联系管理员</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3><span class="seeking-text">Seeking</span></h3>
+                    <p>三峡大学软件下载&答疑预约平台</p>
+                </div>
+                <div class="footer-links">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/booking">预约表单</a></li>
+                        <li><a href="/query">结果查询</a></li>
+                        <li><a href="/faq">常见问题</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 <span class="seeking-text">Seeking</span> - 三峡大学软件下载&答疑预约平台</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/query.js"></script>
+</body>
+</html>

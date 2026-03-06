@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seeking - 预约表单</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <i class="fas fa-search"></i>
+                <span class="brand-name">Seeking</span>
+                <span class="brand-subtitle">三峡大学技术支持&科研竞赛答疑预约平台</span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="/"><i class="fas fa-home"></i> 首页</a></li>
+                <li><a href="/booking" class="active"><i class="fas fa-calendar-plus"></i> 预约表单</a></li>
+                <li><a href="/query"><i class="fas fa-search"></i> 结果查询</a></li>
+                <li><a href="/faq"><i class="fas fa-question-circle"></i> 常见问题</a></li>
+                <li><a href="/admin"><i class="fas fa-user-cog"></i> 管理员</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="container">
+        <div class="page-header">
+            <h1><span class="seeking-text">Seeking</span> - 预约表单</h1>
+            <p class="page-subtitle">填写以下信息预约软件下载或技术答疑服务</p>
+        </div>
+
+        <div class="booking-form-container">
+            <form id="bookingForm" class="booking-form">
+                <!-- 姓名 -->
+                <div class="form-group">
+                    <label for="name">
+                        <i class="fas fa-user"></i> 学生姓名 *
+                    </label>
+                    <input type="text" id="name" name="name" placeholder="请输入您的姓名" required>
+                    <div class="form-hint">请填写真实姓名，便于现场核对</div>
+                </div>
+
+                <!-- 手机号 -->
+                <div class="form-group">
+                    <label for="phone">
+                        <i class="fas fa-mobile-alt"></i> 联系电话 *
+                    </label>
+                    <input type="tel" id="phone" name="phone" placeholder="请输入11位手机号" required maxlength="11">
+                    <div class="form-hint">请输入11位手机号码，审核结果将通过手机号后4位查询</div>
+                </div>
+
+                <!-- 预约日期 -->
+                <div class="form-group">
+                    <label for="booking_date">
+                        <i class="fas fa-calendar-alt"></i> 预约日期 *
+                    </label>
+                    <input type="date" id="booking_date" name="booking_date" required>
+                    <div class="form-hint">请选择预约日期（仅支持周一至周日全天）</div>
+                </div>
+
+                <!-- 预约地点 -->
+                <div class="form-group">
+                    <label for="location">
+                        <i class="fas fa-map-marker-alt"></i> 预约地点 *
+                    </label>
+                    <select id="location" name="location" required>
+                        <option value="">请选择预约地点</option>
+                        <option value="图书馆3楼电子阅览室">图书馆3楼电子阅览室</option>
+                        <option value="计算机与信息学院楼201室">计算机与信息学院楼201室</option>
+                        <option value="创新创业中心105室">创新创业中心105室</option>
+                    </select>
+                    <div class="form-hint">请选择线下服务地点</div>
+                </div>
+
+                <!-- 软件名称 -->
+                <div class="form-group">
+                    <label for="software">
+                        <i class="fas fa-download"></i> 待下载软件名称 *
+                    </label>
+                    <div class="software-input-group">
+                        <input type="text" id="software" name="software" list="software-suggestions" placeholder="请输入或选择软件名称" required>
+                        <datalist id="software-suggestions">
+                            <option value="Office 365">
+                            <option value="MATLAB">
+                            <option value="Python">
+                            <option value="AutoCAD">
+                            <option value="SPSS">
+                            <option value="Origin">
+                            <option value="Visio">
+                            <option value="Adobe Creative Cloud">
+                            <option value="Visual Studio">
+                            <option value="EndNote">
+                            <option value="Citespace">
+                            <option value="NVivo">
+                        </datalist>
+                    </div>
+                    <div class="form-hint">请输入或从下拉列表选择常用软件名称</div>
+                </div>
+
+                <!-- 问题描述 -->
+                <div class="form-group">
+                    <label for="problem_description">
+                        <i class="fas fa-question-circle"></i> 问题描述（选填）
+                    </label>
+                    <textarea id="problem_description" name="problem_description" rows="4" placeholder="请描述您需要下载的软件版本或遇到的具体问题（例如：需要MATLAB R2024a安装包、Python环境配置问题等）"></textarea>
+                    <div class="form-hint">详细描述有助于我们为您提供更好的服务</div>
+                </div>
+
+                <!-- 表单提交按钮 -->
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        <i class="fas fa-paper-plane"></i> 提交预约
+                    </button>
+                    <button type="reset" class="btn btn-secondary">
+                        <i class="fas fa-redo"></i> 清空表单
+                    </button>
+                </div>
+
+                <!-- 表单提示 -->
+                <div class="form-notice">
+                    <h3><i class="fas fa-info-circle"></i> 预约须知</h3>
+                    <ul>
+                        <li>所有带 * 的字段为必填项</li>
+                        <li>预约提交后，管理员将在1-2个工作日内审核</li>
+                        <li>审核结果可通过"结果查询"页面，使用手机号后4位查询</li>
+                        <li>请按时前往预约地点，并携带校园卡等身份证明</li>
+                        <li>如有问题，请查看<a href="/faq">常见问题</a>或联系管理员</li>
+                    </ul>
+                </div>
+            </form>
+
+            <!-- 预约成功提示（初始隐藏） -->
+            <div id="successMessage" class="success-message" style="display: none;">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Seeking：预约信息已提交，等待审核</h2>
+                <p>您的预约信息已成功提交，管理员将在1-2个工作日内审核。</p>
+                <p>请使用手机号后4位在"结果查询"页面查看审核状态。</p>
+                <div class="success-actions">
+                    <a href="/query" class="btn btn-primary"><i class="fas fa-search"></i> 前往查询</a>
+                    <button id="newBookingBtn" class="btn btn-secondary"><i class="fas fa-calendar-plus"></i> 再次预约</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3><span class="seeking-text">Seeking</span></h3>
+                    <p>三峡大学软件下载&答疑预约平台</p>
+                </div>
+                <div class="footer-links">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/booking">预约表单</a></li>
+                        <li><a href="/query">结果查询</a></li>
+                        <li><a href="/faq">常见问题</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 <span class="seeking-text">Seeking</span> - 三峡大学软件下载&答疑预约平台</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/booking.js"></script>
+</body>
+</html>

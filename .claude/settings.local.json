@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "Bash(pip:*)",
+      "Bash(chmod +x:*)",
+      "Bash(ls:*)",
+      "Bash(netstat:*)",
+      "Bash(ss:*)",
+      "Bash(node:*)",
+      "Bash(npm:*)",
+      "Bash(lt:*)",
+      "Bash(curl:*)",
+      "Bash(rm:*)",
+      "Bash(pkill:*)",
+      "Bash(cmd:*)",
+      "Bash(ssh:*)",
+      "Bash(kill %1:*)"
+    ]
+  }
+}
