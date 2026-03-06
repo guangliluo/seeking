@@ -262,7 +262,9 @@ def admin_dashboard_page():
 # ==================== 启动应用 ====================
 
 if __name__ == '__main__':
+    import os
+    port = int(os.environ.get('PORT', 5002))
     print("Seeking 网站后端启动中...")
-    print("访问地址: http://localhost:5002")
-    print("管理员后台: http://localhost:5002/admin")
-    app.run(debug=False, host='0.0.0.0', port=5002)
+    print(f"访问地址: http://localhost:{port}")
+    print(f"管理员后台: http://localhost:{port}/admin")
+    app.run(debug=False, host='0.0.0.0', port=port)
